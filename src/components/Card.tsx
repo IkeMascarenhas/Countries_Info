@@ -1,18 +1,13 @@
-import React from 'react'
-import CountriesListType,{ Country } from '../types/Country'
+import { Country } from '../types/Country'
 
 type CardProps = {
   key: number,
   country: Country
 }
 
-const Card = ({key, country}:CardProps) => {
-  console.log(country)
-
-    // if(!country.coatOfArms.png) return
-
+const Card = ({country}:CardProps) => {
   return (
-    <section className='w-[70vw] m-auto bg-[#2b3945] my-5 rounded-md shadow-md'>
+    <section className='w-[100%] m-auto bg-[#2b3945] my-5 rounded-md shadow-md md:max-w-[300px]'>
         <div className='w-[100%] flex-col'>
           <img src={country.flags.svg} 
           alt={`Flag from ${country.name.common}`} 
@@ -26,7 +21,7 @@ const Card = ({key, country}:CardProps) => {
           <ul 
           className='mb-6 text-base'
           >
-            <li><strong className='font-semibold'>Population: </strong>{country.population}</li>
+            <li><strong className='font-semibold'>Population: </strong>{country.population.toLocaleString('pt-BR')}</li>
             <li><strong>Region: </strong>{country.region}</li>
             <li><strong>Capital: </strong>{country.capital}</li>
           </ul>

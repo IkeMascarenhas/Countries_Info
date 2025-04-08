@@ -4,6 +4,10 @@ import CountriesListType from '../types/Country';
 interface countriesContextType {
     countriesList: CountriesListType;
     setCountriesList: React.Dispatch<React.SetStateAction<any>>;
+    isLoading: Boolean;
+    setIsLoading: React.Dispatch<React.SetStateAction<any>>
+    error: string;
+    setError: React.Dispatch<React.SetStateAction<any>>
 }
 
 const countriesListContext = createContext<countriesContextType | undefined>(undefined);
@@ -14,8 +18,11 @@ interface CountriesProviderProps {
 
 function CountriesListProvider({ children }: CountriesProviderProps) {
     const [countriesList, setCountriesList] = useState<CountriesListType>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState("");
+
     return (
-        <countriesListContext.Provider value={{countriesList, setCountriesList}}>
+        <countriesListContext.Provider value={{countriesList, setCountriesList, isLoading, setIsLoading, error, setError}}>
             {children}
         </countriesListContext.Provider>
     );
