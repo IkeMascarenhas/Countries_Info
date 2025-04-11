@@ -19,7 +19,7 @@ Os usuários devem poder:
 
 ### Screenshot
 
-![](../countriesinfo.jpeg)
+![](./countriesinfo.jpeg)
 
 ### Links
 
