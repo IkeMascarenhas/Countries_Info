@@ -42,40 +42,5 @@ export type Country = {
     
 type CountriesListType = Country[]
 
-const initialCountry = {
-  name: {
-    common: "",
-    official: "",
-    nativeName: {},
-  },
-  altSpellings: [],
-  area: 0,
-  capital: [],
-  capitalInfo: { latlng: [0, 0] },
-  car: { signs: [], side: "" },
-  cca2: "",
-  cca3: "",
-  ccn3: "",
-  coatOfArms: { png: "", svg: "" },
-  continents: [],
-  currencies: {},
-  demonyms: {},
-  flag: "",
-  flags: { png: "", svg: "" },
-  idd: { root: "", suffixes: [] },
-  independent: false,
-  landlocked: false,
-  languages: {},
-  latlng: [0, 0],
-  maps: { googleMaps: "", openStreetMaps: "" },
-  population: 0,
-  region: "",
-  startOfWeek: "",
-  status: "",
-  timezones: [],
-  tld: [],
-  translations: {},
-  unMember: false,
-};
 
 export default CountriesListType
