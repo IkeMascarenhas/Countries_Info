@@ -1,9 +1,14 @@
 export type Country = {
-    name: {
-        common: string;
+  name: {
+    common: string;
+    official: string;
+    nativeName: {
+      [languageCode: string]: {
         official: string;
-        nativeName?: Record<string, { official: string; common: string }>;
+        common: string;
+      };
     };
+  };
     altSpellings: string[];
     area: number;
     capital: string[];
@@ -28,6 +33,7 @@ export type Country = {
     region: string;
     startOfWeek: string;
     status: string;
+    subregion: string;
     timezones: string[];
     tld: string[];
     translations: Record<string, { official: string; common: string }>;

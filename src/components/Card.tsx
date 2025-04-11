@@ -1,4 +1,5 @@
 import { Country } from '../types/Country'
+import { Link } from 'react-router-dom'
 
 type CardProps = {
   key: number,
@@ -7,7 +8,7 @@ type CardProps = {
 
 const Card = ({country}:CardProps) => {
   return (
-    <section className='w-[100%] m-auto bg-[#2b3945] my-5 rounded-md shadow-md md:max-w-[300px]'>
+    <Link to={`/details/${country.name.common}`} className='w-[100%] m-auto bg-[#2b3945] my-5 rounded-md shadow-md md:max-w-[300px]'>
         <div className='w-[100%] flex-col'>
           <img src={country.flags.svg} 
           alt={`Flag from ${country.name.common}`} 
@@ -26,7 +27,7 @@ const Card = ({country}:CardProps) => {
             <li><strong>Capital: </strong>{country.capital}</li>
           </ul>
         </div>
-    </section>
+    </Link>
   )
 }
 

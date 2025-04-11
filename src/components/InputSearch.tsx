@@ -41,7 +41,7 @@ const InputSearch = ({inputCountry, setInputCountry}: InputProps) => {
       onChange={(e) => setInputCountry(e.target.value)}
       />
       <Button type="button" 
-      className="w-[20%] p-5"
+      className="w-[20%] p-5 overflow-hidden"
       onClick={fetchSearchData}
       >Search</Button>
     </section>

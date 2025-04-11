@@ -16,6 +16,7 @@ img{
 
 *{
   font-family: 'Nunito Sans', 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 
 body{

@@ -5,6 +5,9 @@ import getAllCountries from "../services/getAllCountries";
 import InputSearch from "../components/InputSearch";
 import ErrorMessage from "@/components/ErrorMessage";
 import { Button } from "@/components/ui/button";
+import Loading from "@/components/Loading";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const Home = () => {
   const [inputCountry, setInputCountry] = useState("");
@@ -25,6 +28,7 @@ const Home = () => {
 
   const fetchData = async () => {
     try {
+      setIsLoading(true)
       const data = await getAllCountries();
       setCountriesList(data);
       setIsLoading(false);
@@ -41,12 +45,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <header className="flex m-0 w-[100vw] bg-[#2b3945]" onClick={fetchData}>
-        <h1 className="text-sm font-semibold p-4 text-white">
-          Where in the world?
-        </h1>
-      </header>
+    <>
+      <Header fetchData={fetchData}/>
       <InputSearch
         inputCountry={inputCountry}
         setInputCountry={setInputCountry}
@@ -55,7 +55,7 @@ const Home = () => {
         {error.length > 0 ? (
           <ErrorMessage message={error}/>
         ) : isLoading ? (
-          <h1>Carregando</h1>
+          <Loading/>
         ) : (
           currentItems.map((country, index) => (
             <Card key={index} country={country} />
@@ -63,7 +63,7 @@ const Home = () => {
         )}
       </article>
 
-      <div className="flex justify-center mt-4 gap-2">
+      <div className="flex justify-center my-4 gap-2 ">
         <Button
           
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -81,7 +81,8 @@ const Home = () => {
           Next
         </Button>
       </div>
-    </div>
+      <Footer/>
+    </>
   );
 };
 

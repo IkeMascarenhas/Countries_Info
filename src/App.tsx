@@ -1,15 +1,13 @@
 import { Routes, Route } from "react-router-dom"
 import Home from "./pages/Home"
-import Details from "./pages/Details"
-import { useEffect } from "react"
-import getAllCountries from "./services/getAllCountries"
+import CountryDetails from "./pages/CountryDetails"
 const App = () => {
 
   
   return (
     <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/details" element={<Details/>}/>
+      <Route path="/details/:country" element={<CountryDetails/>}/>
     </Routes>
   )
 }
