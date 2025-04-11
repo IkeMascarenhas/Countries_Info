@@ -23,8 +23,7 @@ Os usuários devem poder:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Deploy: [https://countries-info-rho.vercel.app/](https://countries-info-rho.vercel.app/)
 
 ### Construído com
 
